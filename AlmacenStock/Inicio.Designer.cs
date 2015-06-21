@@ -33,9 +33,9 @@
             this.lbContra = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContra = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.lbIngresarUsuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnIngresar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,20 +74,7 @@
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(207, 26);
             this.txtContra.TabIndex = 3;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Image = global::AlmacenStock.Properties.Resources.disk;
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(179, 205);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(109, 32);
-            this.btnGuardar.TabIndex = 4;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.txtContra.UseSystemPasswordChar = true;
             // 
             // lbIngresarUsuario
             // 
@@ -106,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lbIngresarUsuario);
             this.groupBox1.Controls.Add(this.lbUsuario);
-            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.btnIngresar);
             this.groupBox1.Controls.Add(this.lbContra);
             this.groupBox1.Controls.Add(this.txtContra);
             this.groupBox1.Controls.Add(this.txtUsuario);
@@ -118,6 +105,21 @@
             this.groupBox1.Size = new System.Drawing.Size(475, 277);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.ForeColor = System.Drawing.Color.Black;
+            this.btnIngresar.Image = global::AlmacenStock.Properties.Resources.lock_open;
+            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIngresar.Location = new System.Drawing.Point(179, 205);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(109, 32);
+            this.btnIngresar.TabIndex = 4;
+            this.btnIngresar.Text = "INGRESAR";
+            this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // Inicio
             // 
@@ -143,7 +145,7 @@
         private System.Windows.Forms.Label lbContra;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContra;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label lbIngresarUsuario;
         private System.Windows.Forms.GroupBox groupBox1;
     }

@@ -108,6 +108,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenuPrincipal";
             this.Text = "Sistema Bodega";
+            this.Load += new System.EventHandler(this.FormMenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

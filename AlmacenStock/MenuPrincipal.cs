@@ -13,21 +13,33 @@ namespace AlmacenStock
     {
         public FormMenuPrincipal()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            
+            productosToolStripMenuItem.Enabled = false;
+            inicioUsuarioToolStripMenuItem.Enabled = true;
+            crearListaToolStripMenuItem.Enabled = false;
+            reportesToolStripMenuItem.Enabled = false;
+            
+        }
+
+        public void habilitar() {
+            productosToolStripMenuItem.Enabled = true;
+            inicioUsuarioToolStripMenuItem.Enabled = false;
+            crearListaToolStripMenuItem.Enabled = true;
+            reportesToolStripMenuItem.Enabled = true;
         }
 
         private void inicioUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Inicio ini = new Inicio();
-            
+            Inicio ini = new Inicio();           
             ini.MdiParent= this;
             ini.Show();
+
         }
 
         private void ingresarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
              Productos ini = new Productos();
-
             ini.MdiParent = this;
             ini.Show();
         }
@@ -46,6 +58,11 @@ namespace AlmacenStock
 
             ini.MdiParent = this;
             ini.Show();
+        }
+
+        private void FormMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
