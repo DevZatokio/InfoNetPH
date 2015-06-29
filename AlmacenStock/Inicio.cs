@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using AlmacenStock;
+using System.Data;
+using System.Data.SqlClient;
 
 
 
@@ -22,27 +24,50 @@ namespace AlmacenStock
            
 
         }
-          Conexion bd = new Conexion();
+        Operaciones bd = new Operaciones();
           FormMenuPrincipal menu = new FormMenuPrincipal();
+          Conexion cnn = new Conexion();
+
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-             string usuario = bd.selectstring("select username from Usuario where username = '" +txtUsuario.Text + "'");
-            string contraseña = bd.selectstring("select contrasena from Usuario where contrasena = '" + txtContra.Text + "'");
-
-            if (usuario == txtUsuario.Text && contraseña == txtContra.Text)
+            
+            
+            
+            if (txtContra.Text == "" || txtUsuario.Text == "")
             {
+
+                MessageBox.Show("Ingresar Contraseña o Ingresar Usuario");
+
+            }
+            else{
+            string usuario =txtUsuario.Text;
+            string contrasena = txtContra.Text;
+            int result = 0;
+            string sql  = "SELECT * FROM Usuario WHERE (username='" + usuario + "' AND contrasena='" + contrasena + "')";
+            SqlCommand cmd = new SqlCommand(sql, cnn.getConection_DonHugo()); // la instruccion sql + la conexion
+            cmd.Parameters.AddWithValue("@username",txtUsuario.Text);
+            cmd.Parameters.AddWithValue("@contrasena",txtContra.Text);
+           
+            try
+            {
+                result = (int)cmd.ExecuteScalar();
+                if(result > 0){
                 menu.Hide();
-                menu.habilitar();                
+                menu.habilitar();
                 menu.ShowDialog();
                 
-
+                }
+                
             }
-            else {
+            catch (Exception)
+            {
+
                 MessageBox.Show("Usuario Incorrecto");
             }
-           
-               
+                  
+            }
+              
         }
     }
 }

@@ -21,6 +21,12 @@ namespace AlmacenStock
 
         }
 
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            Agregar_Producto agregarProducto = new Agregar_Producto();
+            agregarProducto.Show();
+        }
+
        
     }
 }
