@@ -15,7 +15,7 @@ namespace AlmacenStock
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenuPrincipal());
+            Application.Run(new Inicio());
         }
     }
 }

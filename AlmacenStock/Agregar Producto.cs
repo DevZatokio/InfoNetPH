@@ -17,17 +17,19 @@ namespace AlmacenStock
             llenarCombobox();
         }
         Conexion bd = new Conexion();
+       
         private void btnGuardarProducto_Click(object sender, EventArgs e)
         {
             try
             {
-                Operaciones bd = new Operaciones();
+                Operaciones ope = new Operaciones();
                 int selec = (int) cBTipo.SelectedValue;
                 
-                if (bd.Insert_producto(txtNombreProducto.Text,  Convert.ToInt32(txtCantidadProducto.Text), txtDescripcionProducto.Text, selec))
+                if (ope.Insert_producto(txtNombreProducto.Text,  Convert.ToInt32(txtCantidadProducto.Text), txtDescripcionProducto.Text, selec))
                 {
                     MessageBox.Show("Ingresado Correctamente");
-                    Close();
+                    this.Close();
+                    
                 }
                 else
                 {
@@ -58,6 +60,12 @@ namespace AlmacenStock
             cBTipo.ValueMember= "Id_tipo";
             cBTipo.DisplayMember = "Nombre_tipo";
                                 
+        }
+
+        private void Agregar_Producto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Productos form = new Productos();
+            form.Show();
         }
 
 

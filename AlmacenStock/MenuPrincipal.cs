@@ -11,14 +11,11 @@ namespace AlmacenStock
 {
     public partial class FormMenuPrincipal : Form
     {
+        public int inicio_bien =0;
         public FormMenuPrincipal()
         {
-            InitializeComponent();            
-            
-            productosToolStripMenuItem.Enabled = false;
-            inicioUsuarioToolStripMenuItem.Enabled = true;
-            crearListaToolStripMenuItem.Enabled = false;
-            reportesToolStripMenuItem.Enabled = false;
+            InitializeComponent();        
+                    
             
         }
 
@@ -33,6 +30,7 @@ namespace AlmacenStock
         {
             Inicio ini = new Inicio();           
             ini.MdiParent= this;
+            ini.WindowState = FormWindowState.Maximized;
             ini.Show();
 
         }
@@ -40,7 +38,9 @@ namespace AlmacenStock
         private void ingresarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
              Productos ini = new Productos();
+             
             ini.MdiParent = this;
+            ini.WindowState = FormWindowState.Maximized;
             ini.Show();
         }
 
@@ -49,6 +49,7 @@ namespace AlmacenStock
             ListadodeProductos ini = new ListadodeProductos();
 
             ini.MdiParent = this;
+            ini.WindowState = FormWindowState.Maximized;
             ini.Show();
         }
 
@@ -57,12 +58,30 @@ namespace AlmacenStock
             Reportes ini = new Reportes();
 
             ini.MdiParent = this;
+            ini.WindowState = FormWindowState.Maximized;
             ini.Show();
         }
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
-            
+            if (inicio_bien == 0)
+            {
+                productosToolStripMenuItem.Enabled = false;
+                inicioUsuarioToolStripMenuItem.Enabled = true;
+                crearListaToolStripMenuItem.Enabled = false;
+                reportesToolStripMenuItem.Enabled = false;
+            }
+            else {
+                productosToolStripMenuItem.Enabled = true;
+                inicioUsuarioToolStripMenuItem.Enabled = false;
+                crearListaToolStripMenuItem.Enabled = true;
+                reportesToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        private void FormMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

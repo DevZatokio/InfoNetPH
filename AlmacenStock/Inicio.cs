@@ -21,8 +21,7 @@ namespace AlmacenStock
         public Inicio()
         {
             InitializeComponent();
-           
-
+            
         }
         Operaciones bd = new Operaciones();
           FormMenuPrincipal menu = new FormMenuPrincipal();
@@ -30,15 +29,10 @@ namespace AlmacenStock
 
 
         private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            
-            
-            
+        {                      
             if (txtContra.Text == "" || txtUsuario.Text == "")
             {
-
                 MessageBox.Show("Ingresar Contraseña o Ingresar Usuario");
-
             }
             else{
             string usuario =txtUsuario.Text;
@@ -53,12 +47,17 @@ namespace AlmacenStock
             {
                 result = (int)cmd.ExecuteScalar();
                 if(result > 0){
-                menu.Hide();
-                menu.habilitar();
-                menu.ShowDialog();
+                    
+                    menu.inicio_bien = -1;
+                    this.Hide();
+                    menu.WindowState = FormWindowState.Maximized;
+                    menu.Show(); 
+                    
+                //menu.Hide();
+                //menu.habilitar();
+                //menu.Show();             
                 
                 }
-                
             }
             catch (Exception)
             {

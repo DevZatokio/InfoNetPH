@@ -153,6 +153,7 @@
             this.Name = "Agregar_Producto";
             this.Text = "Agregar_Producto";
             this.TransparencyKey = System.Drawing.Color.Lavender;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Agregar_Producto_FormClosed);
             this.Load += new System.EventHandler(this.Agregar_Producto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

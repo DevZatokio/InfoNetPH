@@ -12,7 +12,7 @@ namespace AlmacenStock
         Conexion cnn = new Conexion();
 
         //Produtos 
-
+        //INSERT
         public bool Insert_producto(string nombre, int cantidad, string descripcion, int ComboboxTipo)
         {
             try
@@ -28,7 +28,39 @@ namespace AlmacenStock
                 return false;
             }
         }
-        
+        //UPDATE
+        public bool Update_producto(int codigo,string nombre, string descripcion, int cantidad,int comboboxTipo)
+        {
+            try
+            {
+                string sql = "Update Producto set Nombre_producto = '" + nombre + "', Cantidad_producto = " + cantidad + ",Descripcion_producto='" + descripcion + "',Id_tipo=" + comboboxTipo + " where Id_producto = " + codigo + "";// los string van con comillas simples
+                SqlCommand cmd = new SqlCommand(sql, cnn.getConection_DonHugo()); // la instruccion sql + la conexion
+                int n = cmd.ExecuteNonQuery(); // numero de filas afectadas
+                return n > 0;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+        //DELETE
+        public bool Delete_producto(int codigo)
+        {
+            try
+            {
+                string sql = "delete from Producto where Id_producto = " + codigo + "";// los string van con comillas simples
+                SqlCommand cmd = new SqlCommand(sql, cnn.getConection_DonHugo()); // la instruccion sql + la conexion
+                int n = cmd.ExecuteNonQuery(); // numero de filas afectadas
+                return n > 0;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+  //___________________________________________________________________________________
         //Rescartar Producto
         public DataTable lista_Producto()
         {
@@ -37,7 +69,9 @@ namespace AlmacenStock
                 DataTable dt = new DataTable();
                 string sql = "select * from Producto";
                 SqlDataAdapter da = new SqlDataAdapter(sql, cnn.getConection_DonHugo());
+                
                 da.Fill(dt);
+                
                 return dt;
             }
             catch (Exception)

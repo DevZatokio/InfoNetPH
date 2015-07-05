@@ -41,6 +41,8 @@
             // 
             // lbUsuario
             // 
+            this.lbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Location = new System.Drawing.Point(91, 118);
             this.lbUsuario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -51,6 +53,8 @@
             // 
             // lbContra
             // 
+            this.lbContra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbContra.AutoSize = true;
             this.lbContra.Location = new System.Drawing.Point(91, 162);
             this.lbContra.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -61,6 +65,8 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsuario.Location = new System.Drawing.Point(179, 118);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtUsuario.Name = "txtUsuario";
@@ -69,6 +75,8 @@
             // 
             // txtContra
             // 
+            this.txtContra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContra.Location = new System.Drawing.Point(179, 151);
             this.txtContra.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtContra.Name = "txtContra";
@@ -78,6 +86,8 @@
             // 
             // lbIngresarUsuario
             // 
+            this.lbIngresarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbIngresarUsuario.AutoSize = true;
             this.lbIngresarUsuario.Location = new System.Drawing.Point(176, 50);
             this.lbIngresarUsuario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -88,9 +98,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.lbIngresarUsuario);
             this.groupBox1.Controls.Add(this.lbUsuario);
             this.groupBox1.Controls.Add(this.btnIngresar);
@@ -108,6 +116,8 @@
             // 
             // btnIngresar
             // 
+            this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIngresar.ForeColor = System.Drawing.Color.Black;
             this.btnIngresar.Image = global::AlmacenStock.Properties.Resources.lock_open;
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,6 +143,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Inicio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
